@@ -11,5 +11,9 @@ class Users(models.Model):
     user_birth = models.DateTimeField('date published')
     user_sex = models.NullBooleanField()
     user_info = models.TextField()
+    
+    def __str__(self):
+        return self.user_name
+
 
 # Create your models here.
