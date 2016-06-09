@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+        <div class="jumbotron">
+  <div class="container">
+                        <h2>Register</h2>
+        </div>
+</div>
+
+<div class="container">
+
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+        <form action= "{% url 'createUser' %}" method="post">
+        {% csrf_token %}
+        <label for="user_name">Your name: </label>
+        <input id="user_name" type="text" name="user_name" maxlength="100">
+        <label for="password">Password: </label>
+        <input id="password" type="text" name="password" maxlength="100">
+        <input type="submit" value="register">
+        </form>
+</div>
+{% endblock %}
+
