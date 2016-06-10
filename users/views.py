@@ -30,7 +30,7 @@ def createUser(request):
             #user.last_name = 'lastname'
             user.set_password(password)
             user.save()
-            return HttpResponseRedirect(reverse('users:register'))
+            return HttpResponseRedirect(reverse('register'))
     return render(request, 'users/register.html', {'error_message': "Deine Eingaben sind falsch! Bitte versuchen Sie es erneut!",})
 
 
